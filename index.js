@@ -125,7 +125,7 @@ var reloadp = {
         // blowing up this process exiting correctly.
         _.pull(tables, '.', '');
 
-        var barString = 'Reloading ' + this.destOpts.alias + ' [:bar] :percent in :elapseds';
+        var barString = 'Reloading ' + this.destOpts.alias + ' [:bar] :percent in :elapseds. Eta :etas';
         var bar = new PB(barString, { total: tables.length, width: 20 });
 
         var iq = async.queue(_.bind(this.importWorker, this), this.destCores);
